@@ -1194,3 +1194,53 @@ header {
     margin-left: 0;
     width: 100%;
 }
+
+/* -----------------------------------------RESPOND----------------------------------------- */
+.respond {
+    width: 30%;
+    margin: 0 auto;
+    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    box-shadow: 0 0 10px 5px rgba(27, 139, 204, 0.2);
+}
+
+.success-icon {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: 2rem auto;
+    background-color: #1B8BCC;
+    text-align: center;
+}
+
+.success-icon i {
+    line-height: 6rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.respond p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #666666;
+    line-height: 2rem;
+}
+
+.respond a {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #1B8BCC;
+    font-weight: 500;
+
+    padding: 1.5rem 0 2rem;
+}
+
+.respond a > i {
+    margin-left: 0.5rem;
+}
+
