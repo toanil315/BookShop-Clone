@@ -14,6 +14,52 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <!-- MODAL -->
+    <div class="modal-user-infor">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="form-container modal">
+                <div class="modal-header row--base">
+                    <h2>Edit Information</h2>
+                    <span class="close"><i class="fa fa-times"></i></span>
+                </div>
+                <div class="form-login ">
+                    <div class="form-group row">
+                        <p>User name</p>
+                        <input class="form__input" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="form-group row">
+                        <p>Password</p>
+                        <input class="form__input" type="password" />
+                    </div>
+                    <div class="modal-ctrl row">
+                        <p class="close">Cancel</p>
+                        <button class="btn ctrl--add-to-cart">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -100,6 +146,54 @@
             </div>
         </div>
     </header>
+
+    <!-- USER-INFOR -->
+    <section class="user-infor">
+        <div class="container">
+            <div class="user-infor-content row--base">
+                <div class="user-infor-left">
+                    <div class="user-infor-left__header">
+                        <div class="avartar">
+                            <img src="https://ui-avatars.com/api/?name=toan" alt="">
+                        </div>
+                        <h4>Cong Toan</h4>  
+                        <p>Customer</p>
+                    </div>
+                    <ul class="user-ctrl">
+                        <li class="user-ctrl__item active">
+                            <p>Information</p>
+                        </li>
+                        <li class="user-ctrl__item edit ">
+                            <p>Edit Information</p>
+                        </li>
+                        <li class="user-ctrl__item">
+                            <p>Manage Order</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user-infor-right">
+                    <div class="user-infor-detail">
+                        <div class="user-infor-detail__item row--base">
+                            <p>Name:</p>
+                            <span>Nghia Map</span>
+                        </div>
+                        <div class="user-infor-detail__item row--base">
+                            <p>Email:</p>
+                            <span>it-e-nghia@gmail.com</span>
+                        </div>
+                        <div class="user-infor-detail__item row--base">
+                            <p>Phone Number:</p>
+                            <span>0905- một năm - 2 năm - 3 đứa</span>
+                        </div>
+                        <div class="user-infor-detail__item row--base">
+                            <p>Address:</p>
+                            <span>Ngủ dưới chân cầu rồng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
  
     <!-- FOOTER -->
     <section class="footer">
@@ -198,6 +292,34 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        const ctrlItems = document.querySelectorAll(".user-ctrl__item");
+        for(let i = 0; i < ctrlItems.length; i++) {
+            ctrlItems[i].addEventListener("click", function () {
+                document.querySelector(".user-ctrl__item.active").classList.remove("active");
+                this.classList.add("active");
+            })
+        }
+
+        const ctrlItemEdit = document.querySelector(".user-ctrl__item.edit");
+        ctrlItemEdit.addEventListener("click", function() {
+            document.querySelector(".modal-user-infor").classList.add("open")
+        });
+
+        const ctrlCloses = document.querySelectorAll(".close");
+        const overlayModal = document.querySelector(".overlay");
+        overlayModal.addEventListener("click", close);
+        for(let i = 0; i < ctrlCloses.length; i++) {
+            ctrlCloses[i].addEventListener("click", close);
+        }
+
+        function close() {
+            document.querySelector(".modal-user-infor.open").classList.remove("open")
+            document.querySelector(".user-ctrl__item.edit").classList.remove("active")
+            ctrlItems[0].classList.add("active");
+        }
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,8 @@
 
 body, html {
     font-family: 'Roboto', sans-serif;
-    font-size: 62.5%
+    font-size: 62.5%;
+    position: relative;
 }
 
 .container {
@@ -40,6 +41,11 @@ a {
     transition: all 0.3s linear;
 }
 
+.btn.btn-secondary {
+    color: #1B8BCC;
+    background-color: #fff; 
+}
+
  .btn:hover {
     background-color: #1B8BCC;
     color: #fff;
@@ -47,6 +53,18 @@ a {
 
  .btn:focus {
     outline: none;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        top: 0;
+    }
+
+    to {
+        opacity: 1;
+        top: 10%;
+    }
 }
 
 /* ------------------------------------HEADER-------------------------------- */
@@ -1243,4 +1261,218 @@ header {
 .respond a > i {
     margin-left: 0.5rem;
 }
+
+/* ---------------------------------------USER-INFORMATION--------------------------------------------- */
+.user-infor {
+    padding: 10rem 0 12rem;
+}
+
+.user-infor-content {
+    justify-content: space-between;
+}
+
+.user-infor-left {
+    width: calc(25% - 2rem);
+}
+
+.user-infor-left__header {
+    padding: 2rem;
+    text-align: center;
+
+    border: 1px solid #E1E1E1;
+    border-bottom: 0;
+}
+
+.avartar {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    margin:  0 auto 2rem;
+
+    box-shadow: 0 5px 10px 2px rgba(27, 139, 204, 0.2);
+}
+
+.avartar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-infor-left__header h4 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #666;
+
+    margin-bottom: 1rem;
+}
+
+.user-infor-left__header p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #1B8BCC;
+}
+
+.user-ctrl {
+    width: 100%;
+}
+
+.user-ctrl__item {
+    width: 100%;
+    padding: 2rem;
+
+    border: 1px solid #E1E1E1;
+    border-top: 0;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    transition:  all 0.1s linear;
+
+    cursor: pointer;
+}
+
+.user-ctrl__item:first-child {
+    border-top: 1.5px solid #E1E1E1;
+}
+
+.user-ctrl__item.active {
+    background-color: #1B8BCC;
+    color: white;
+    border-color: #1B8BCC;
+}
+
+.user-ctrl__item:hover {
+    background-color: #1B8BCC;
+    color: white;
+    border-color: #1B8BCC;
+}
+
+.user-infor-right {
+    width: calc(75% - 2rem);
+}
+
+.user-infor-detail {
+    width: 50%;
+}
+
+.user-infor-detail__item {
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+}
+
+.user-infor-detail__item > p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #1B8BCC;
+}
+
+.user-infor-detail__item > span {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #666666;
+}
+
+/* --------------------------------------MODAL-USER-INFOR------------------------------ */
+.modal-user-infor.open {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0, 0.5);
+}
+
+.modal-user-infor.open .overlay {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.3);
+    z-index: 5;
+}
+
+
+.modal-user-infor .form-container.modal {
+    display: none;
+}
+
+.modal-user-infor.open .form-container.modal {
+    display: block;
+    width: 40%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    z-index: 10;
+
+    animation: fadeDown 1s linear;
+}
+
+.modal-user-infor.open .form-container.modal .modal-header {
+    justify-content: space-between;
+}
+
+.modal-user-infor.open .form-container.modal .modal-header h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #1B8BCC;
+    margin-bottom: 3rem;
+}
+
+.modal-user-infor.open .form-container.modal .modal-header span {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #666666;
+
+    cursor: pointer;
+}
+
+.modal-user-infor.open .form-container.modal .form-group {
+    justify-content: space-between;
+}
+.modal-user-infor.open .form-container.modal .form-group p {
+    width: calc(25% - 1rem);
+}
+
+.modal-user-infor.open .form-container.modal .form-group .form__input {
+    width: calc(75% - 1rem);
+}
+
+.modal-user-infor.open .form-container.modal .modal-ctrl {
+    justify-content: flex-end;
+}
+
+.modal-user-infor.open .form-container.modal .modal-ctrl p {
+    font-size: 1.6rem;
+    color: #666666;
+
+    cursor: pointer;
+}
+
+.modal-user-infor.open .form-container.modal .modal-ctrl .btn.ctrl--add-to-cart{
+    width: 30%;
+    margin-right: 0;
+    margin-left: 4rem;
+}
+
+
+
+
+
+
+
 
