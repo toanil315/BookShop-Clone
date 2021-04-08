@@ -1,3 +1,15 @@
+// -------------------------PRODUCT-ITEM
+
+const bookNames = document.querySelectorAll(".book-name");
+bookNames.forEach((bookName) => {
+    if(bookName.innerHTML.length > 20) {
+        bookName.innerHTML = bookName.innerHTML.substring(0, 30) + "...";
+    }
+});
+
+
+// -----------------------LOGIN-REGISTER
+
 const switchRegister = document.querySelector('.switch-link.switch-register');
 const switchLogin = document.querySelector('.switch-link.switch-login');
 const formLogin = document.querySelector('.form-login');
@@ -14,5 +26,7 @@ switchLogin.addEventListener('click', (e) => {
     formRegister.style.transform = 'translateX(0)';
     formLogin.style.transform = 'translateX(0)';
 })
+
+
 
 
