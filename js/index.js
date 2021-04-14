@@ -2,8 +2,8 @@
 
 const bookNames = document.querySelectorAll(".book-name");
 bookNames.forEach((bookName) => {
-    if(bookName.innerHTML.length > 20) {
-        bookName.innerHTML = bookName.innerHTML.substring(0, 30) + "...";
+    if(bookName.innerHTML.length > 35) {
+        bookName.innerHTML = bookName.innerHTML.substring(0, 35) + "...";
     }
 });
 
