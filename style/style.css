@@ -42,8 +42,8 @@ a {
 }
 
 .btn.btn-secondary {
-    color: #1B8BCC;
-    background-color: #fff; 
+    color: white;
+    background-color: #1B8BCC; 
 }
 
  .btn:hover {
@@ -53,6 +53,11 @@ a {
 
  .btn:focus {
     outline: none;
+}
+
+.btn.btn-secondary:hover {
+    background-color: white;
+    color: #1B8BCC;
 }
 
 @keyframes fadeDown {
@@ -204,16 +209,195 @@ header {
 }
 
 .header-right {
-    text-align: right;
+    justify-content: flex-end;
 }
 
 .header-right i {
     font-size: 2rem;
     color: #666;
     cursor: pointer;
-    margin-right: 3rem;
 }
 
+.cart, .login-status {
+    padding: 0.5rem;
+    position: relative;
+    margin-left: 3rem;
+}
+
+.cart .quantity {
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    padding: 0.5rem 0.6rem;
+    background-color: #1B8BCC;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.cart__detail {
+    position: absolute;
+    top: 100%;
+    left: -30rem;
+    padding: 2rem;
+    width: 40rem;
+    height: 44rem;
+    background-color: white;
+    z-index: 5;
+    box-shadow: 0 2px 15px rgba(0,0,0, 0.3);
+    transform: scale(0.5);
+    transform-origin: 100% 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart:hover .cart__detail {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart__list {
+    height: 30rem;
+    overflow-y: scroll;
+}
+
+.cart__list::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+   
+  .cart__list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .cart__list::-webkit-scrollbar-thumb {
+    background-color: #9e9e9e;
+    border-radius: 20px
+  }
+
+.cart__item {
+    padding-right: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+}
+
+.cart__item img {
+    width: 8rem;
+}
+
+.cart__item-info > h4 {
+    font-size: 2rem;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.cart__item-quantity {
+    font-size: 1.5rem;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+
+.cart__item-quantity > .btn {
+    margin: 0 1.2rem;
+    padding:  0.5rem 1.4rem;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
+.cart__item-info > p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1B8BCC;
+}
+
+.delete-cart__item > i{
+    color: rgb(177, 44, 44);
+}
+
+.total {
+    text-align: right;
+    padding-right: 1rem;
+    margin: 1rem 0 2rem;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #666666;
+}
+
+.total > span {
+    font-weight: 400;
+    color: #1B8BCC;
+}
+
+.cart__detail > .btn.btn-secondary {
+    display: block;
+    margin: auto;
+}
+
+.login-status {
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #666666;
+    position: relative;
+}
+.login-status  img {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 10rem;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+    z-index: 5;
+    transform: scale(0.5);
+    transform-origin: 100% 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.user-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 10rem;
+    height: 2em;
+    background-color: transparent;
+    z-index: 3;
+}
+
+.user-ctrl:hover .user-dropdown {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.user-dropdown > p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666666;
+    cursor: pointer;
+}
+
+.user-dropdown .logout {
+    color: #1B8BCC;
+    font-weight: 300;
+    margin-top: 1rem;
+    cursor: pointer;
+}
 
 /* ---------------------------------------CAROUSEL--------------------------------- */
 
@@ -229,7 +413,7 @@ header {
 }
 
 .carousel-content {
-    padding: 11.5rem 0;
+    padding: 8rem 0;
     width: 40%;
     margin-left: auto;
 }
