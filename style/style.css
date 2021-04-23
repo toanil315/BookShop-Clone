@@ -46,6 +46,11 @@ a {
     background-color: #1B8BCC; 
 }
 
+.btn.btn-danger {
+    color: white;
+    background-color: rgb(177, 44, 44);
+}
+
  .btn:hover {
     background-color: #1B8BCC;
     color: #fff;
@@ -58,6 +63,10 @@ a {
 .btn.btn-secondary:hover {
     background-color: white;
     color: #1B8BCC;
+}
+
+.btn.btn-danger:hover {
+    background-color: rgb(131, 32, 32);
 }
 
 @keyframes fadeDown {
@@ -299,13 +308,33 @@ header {
     margin-bottom: 1rem;
 }
 
+.cart__item-quantity p {
+    margin: 0 1rem;
+}
 
 .cart__item-quantity > .btn {
-    margin: 0 1.2rem;
-    padding:  0.5rem 1.4rem;
-    text-align: center;
-    line-height: 3rem;
-    font-size: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #E1E1E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart__item-quantity > .btn > i {
+    margin-left: 1px;
+    font-size: 1.4rem;
+    color: #E1E1E1;
+}
+
+.cart__item-quantity > .btn:hover {
+    border-color: #1B8BCC;
+}
+
+.cart__item-quantity > .btn:hover > i {
+    color: white;
 }
 
 .cart__item-info > p {
@@ -319,7 +348,6 @@ header {
 }
 
 .total {
-    text-align: right;
     padding-right: 1rem;
     margin: 1rem 0 2rem;
     font-size: 2.4rem;
@@ -332,9 +360,8 @@ header {
     color: #1B8BCC;
 }
 
-.cart__detail > .btn.btn-secondary {
-    display: block;
-    margin: auto;
+.cart__detail-ctrl  {
+    justify-content: space-between;
 }
 
 .login-status {
