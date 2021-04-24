@@ -36,7 +36,7 @@ a {
     padding: 1.5rem 3rem;
     background-color: #fff;
     border-radius: 4rem;
-    border: 0;
+    border: 1px solid #1B8BCC;
     cursor: pointer;
     transition: all 0.3s linear;
 }
@@ -48,6 +48,7 @@ a {
 
 .btn.btn-danger {
     color: white;
+    border-color: rgb(177, 44, 44);
     background-color: rgb(177, 44, 44);
 }
 
@@ -67,6 +68,7 @@ a {
 
 .btn.btn-danger:hover {
     background-color: rgb(131, 32, 32);
+    border-color: rgb(131, 32, 32);
 }
 
 @keyframes fadeDown {
@@ -393,6 +395,10 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-out;
+}
+
+.user-dropdown a {
+    color: #1B8BCC;
 }
 
 .user-dropdown::before {
@@ -1277,7 +1283,7 @@ header {
     width: 22%;
 }
 
-.book__detail, td {
+.book__info > .book__detail {
     border: 1px solid #dddddd;
     border-collapse: collapse;
 }
@@ -1286,6 +1292,7 @@ header {
     padding: 20px;
     font-size: 16px;
     color: #666666;
+    border: 1px solid #dddddd;
     font-weight: 300;
 }
 
@@ -1694,8 +1701,317 @@ header {
 }
 
 
+/* ------------------------------------------------CART---------------------------------------------- */
+.shopping-cart {
+    margin-top: 5rem;
+    margin-bottom: 20rem;
+}
+
+.shopping-cart > .container {
+    justify-content: space-between;
+}
+
+.cart-container {
+    width: calc(77% - 1rem);
+}
+
+.cart-container-ctrl {
+    justify-content: space-between;
+}
+
+.cart-table {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.cart-table tr {
+    border-bottom: 1.5px solid #E1E1E1;
+}
+
+.cart-table th {
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #666666;
+    padding-bottom: 3rem;
+    text-align: left;
+}
+
+.cart-table td {
+    padding: 2rem 0;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #817f7f;
+}
+
+.cart-table td:last-child {
+    position: relative;
+}
+
+.cart-table td h4 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.cart-table td p {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.cart-table td img {
+    width: 10rem;
+}
+
+.cart-quantity {
+    display: inline-block;
+    border: 1.5px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.cart-quantity i {
+    padding: 1rem;
+    color: #666666;
+    cursor: pointer;
+}
+
+.cart-quantity span {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.cart-table .cart-remove {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 0;
+    font-size: 1.4rem;
+    text-align: right;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.cart-remove:hover {
+    color: #1B8BCC;
+}
+
+.check-out {
+    width: calc(23% - 1rem);
+}
+
+.order-summary h3{
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    padding: 2rem;
+    background-color: #1B8BCC;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.subtotal {
+    padding: 3rem 2rem;
+    border: 1.5px solid #E1E1E1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.subtotal p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #666666;
+    margin-bottom: 2rem;
+}
+
+.subtotal p span {
+    justify-content: space-between;
+    margin-left: auto;
+    color: #1B8BCC;
+}
+
+.subtotal .btn.btn-secondary {
+    margin-top: 2rem;
+}
+
+.payment-method {
+    margin-top: 2rem;
+}
+
+.payment-method h3 {
+    font-size: 1.8rem;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.payment-method img {
+    width: 100%;
+    object-fit: cover;
+}
 
 
+/* ------------------------------------------------PURCHASE-------------------------------------------- */
+.purchase {}
+
+.order-info {
+    width: 60%;
+    height: 100vh;
+    padding-top: 6rem;
+    padding-left: 6rem;
+    border-right: 1.5px solid #E1E1E1;
+}
+
+.order-info > a {
+    display: inline-block;
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    color: #666666;
+    cursor: pointer;
+}
+
+.order-info__item p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #333333;
+    margin-bottom: 2rem;
+}
+
+.order-info__item input {
+    width: 90%;
+    padding: 1.5rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #666666;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.order-info__item input:focus {
+    outline: none;
+}
+
+.order-ctrl {
+    margin-top: 2rem;
+}
+
+.order-ctrl .btn.btn-secondary {
+    border-radius: 10px;
+}
+
+.order-ctrl > a {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #1B8BCC;
+    margin-left: 2rem;
+}
+
+
+.order-detail {
+    height: 100vh;
+    width: 40%;
+    padding: 6rem 4.5rem 0;
+    background-color: #FAFAFA;
+}
+
+.order__list {
+    width: 90%;
+    border-bottom: 1.5px solid #E1E1E1;
+}
+
+.order__item {
+    margin-bottom: 1.5rem;
+}
+
+.order__item-img {
+    width: 5.5rem;
+    position: relative;
+}
+
+.order__item-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.order__item-img span {
+    position: absolute;
+    top: -1.25rem;
+    right: -1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #1B8BCC;
+    color: white;
+    font-size: 1.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order__item h3 {
+    font-size: 1.4rem;
+    color: #333333;
+    margin-left: 2rem;
+}
+
+.order__item p {
+    flex: 1;
+    font-size: 1.4rem;
+    color: #333333;
+    margin-left: 2rem;
+    text-align: right;
+}
+
+.order-discount {
+    width: 90%;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1.5px solid #E1E1E1;
+}
+
+.order-discount input {
+    width: 70%;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #666666;
+    padding: 1.2rem 1rem;
+    border: 1.5px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.order-discount input:focus {
+    outline: none;
+}
+
+.order-discount .btn.btn-secondary {
+    font-size: 1.4rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-radius: 5px;
+}
+
+.order-total {
+    width: 90%;
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1.5px solid #E1E1E1;
+}
+
+.order-total span {
+    font-size: 3rem;
+    color: #1B8BCC;
+}
+
+.order-detail > img {
+    display: block;
+    margin-top: 2rem;
+    width: 90%;
+    object-fit: cover;
+}
 
 
 
