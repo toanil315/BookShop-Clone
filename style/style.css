@@ -83,15 +83,43 @@ a {
     }
 }
 
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
 /* ------------------------------------HEADER-------------------------------- */
 
 header {
     background-color: #fff;
     padding: 2rem;
     box-shadow: 0px 0px 20px rgba(0,0,0, 0.2);
-    position: static;
     width: 100%;
     z-index: 10;
+    position: fixed;
+}
+
+header.header-down {
+    animation: slideDown 0.5s linear;
+    transform: translateY(0);
+}
+
+header.header-up {
+    animation: slideUp 0.5s linear;
+    transform: translateY(-100%);
 }
 
 .header-content {
@@ -1168,8 +1196,8 @@ header {
 }
 
 .book__item--detail .price {
-    font-size: 20px;
-    color: #666666;
+    font-size: 2.6rem;
+    color: #1B8BCC;
     margin-bottom: 30px;
 }
 
@@ -1217,6 +1245,7 @@ header {
 }
 
 .ctrl__list .numeric input {
+    text-align: center;
     font-size: 18px;
     color: #666666;
     border-radius: 20px;
@@ -1231,10 +1260,10 @@ header {
     outline-style: none;
 }
 
-.ctrl--add-to-cart.btn {
-    background-color: #1B8BCC;
-    color: white;
-    border: 1px solid #1B8BCC;
+.ctrl__list .btn.btn-secondary {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
     box-shadow: 0 0 7px #1B8BCC;
     margin-left: 20px;
 }
@@ -1446,14 +1475,17 @@ header {
 
 /* -----------------------------------------RESPOND----------------------------------------- */
 .respond {
-    width: 30%;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
     
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.respond-container {
+    width: 30%;
+    height: fit-content;
     text-align: center;
     box-shadow: 0 0 10px 5px rgba(27, 139, 204, 0.2);
 }
