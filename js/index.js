@@ -4,6 +4,7 @@ const carousel = document.querySelector(".carousel");
 if(carousel) {
     carousel.setAttribute("style", "padding-top: " + header.offsetHeight + "px");
 }
+
 let currentScrollY = 0;
 window.addEventListener("scroll", () => {
     let y = window.scrollY;
